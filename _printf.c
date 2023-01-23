@@ -1,8 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
-
 /**
  * _printf - prints a string in  a formatted way
  * @format: string to print
@@ -18,14 +14,7 @@ int _printf(const char *format, ...)
 	va_list arguments; /*declaring a variadic list*/
 
 	va_start(arguments, format); /*initializing the variadic*/
-	
 
-	/*prevent parsing a null pointer*/
-	if (format == NULL)
-	{
-		return (-1);
-	}
-	/*print each character of string*/
 	while (format[i])
 	{
 		if (format[i] != '%')
@@ -46,9 +35,7 @@ int _printf(const char *format, ...)
 				continue;
 			}
 			if (format[i + 1] == '\0')
-			{
 				break;
-			}
 			if (format[i + 1] != '\0')
 			{
 				value = write(1, &format[i + 1], 1);
