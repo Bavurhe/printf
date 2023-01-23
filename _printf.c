@@ -14,10 +14,11 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int count = 0;
 	int value = 0;
+	int (*f)(va_list);
 	va_list arguments; /*declaring a variadic list*/
 
 	va_start(arguments, format); /*initializing the variadic*/
-	int (*f)(va_list);
+	
 
 	/*prevent parsing a null pointer*/
 	if (format == NULL)
