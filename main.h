@@ -32,5 +32,5 @@ typedef struct printHandler
 /* print_bases*/
 /* converter */
 /*_printf */
-int _printf(const char *format, ...);
+int _printf2(const char *format, ...);
 #endif
