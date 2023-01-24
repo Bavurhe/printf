@@ -10,7 +10,7 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _puts(char *s);
-int (*check_specifier(char format))(va_list argumets);
+int (*check_specifier(char format))(va_list my_array);
 
 
 /**
