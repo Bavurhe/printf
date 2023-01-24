@@ -23,3 +23,14 @@ int print_str(va_list arguments)
 	}
 	return (count);
 }
+<<<<<<< HEAD
+=======
+while (str[i])
+{
+count = write(1, &str[i], 1);
+i = i + 1;
+}
+
+return (count);
+}
+>>>>>>> f4a205cdff45159be0f17156173c8eb4cc4f3587

@@ -39,3 +39,19 @@ int print_dec(va_list arguments)
 	}
 	return (count);
 }
+<<<<<<< HEAD
+=======
+}
+
+/*Write the content of the array to stdout*/
+for (i = 0; i >= 0; i--)
+{
+/*Convert int to char*/
+x[0] = ('0' + my_arr[i]);
+count += write(1, x, 1);
+}
+
+return (count);
+
+}
+>>>>>>> f4a205cdff45159be0f17156173c8eb4cc4f3587
