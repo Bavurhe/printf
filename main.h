@@ -31,6 +31,12 @@ int print_cent(va_list p);
 int print_dec(va_list d);
 int print_int(va_list i);
 int print_bin(va_list b);
+int print_unsig(va_list u);
+int print_octal(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
 
+int print_unsignedIntToHex(unsigned int num, char _case);
+int print_hex_base(va_list arg, char _case);
 
 #endif
