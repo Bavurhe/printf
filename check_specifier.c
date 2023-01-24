@@ -6,11 +6,12 @@
  * Return: pointer to a function, if successful and NULL if not successful
 */
 
-int (*check_specifier(const char *format))(va_list)
+int (*check_specifier(char format))(va_list)
 {
-int i;
 
-pH my_array[6] = {
+int i = 0;
+
+pH my_array[7] = {
 {"c", print_char},
 {"s", print_str},
 {"%", print_cent},
@@ -19,14 +20,13 @@ pH my_array[6] = {
 {NULL, NULL}
 };
 
-for (i = 0; my_array[i].t != NULL; i++)
+while (my_array[i].t != NULL)
 {
-if (*(my_array[i].t) == *format)
-{
-return (my_array[i].f);
+    if (my_array[i].t[0] == format)
+    {
+        return (my_array[i].f);
+    }
 }
-}
-
 return (NULL);
 
 }

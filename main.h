@@ -5,9 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <limits.h>
 
+int _putchar(char c);
 int _printf(const char *format, ...);
-int (*check_specifier(const char *))(va_list);
+int _puts(char *s);
+int (*check_specifier(char format))(va_list argumets);
 
 /**
  * struct printHandler - struct to choose the right function depending

@@ -7,44 +7,47 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0;
 	int count = 0;
-	int value = 0;
+	int i;
+	va_list arguments;
 	int (*f)(va_list);
-	va_list arguments; /*declaring a variadic list*/
 
-	va_start(arguments, format); /*initializing the variadic*/
+	va_start(arguments, format);
 
-	while (format[i])
+	if (format != NULL)
 	{
-		if (format[i] != '%')
+		if (format[0] == '%' && format[1] == '\0')
+			return (-1);
+		for (i = 0; format[i] != '\0'; i++)
 		{
-			value = write(1, &format[i], 1);
-			count = count + value;
-			i++;
-			continue;
-		}
-		if (format[i] == '%')
-		{
-			f = check_specifier(&format[i + 1]);
-			if (f != NULL)
+			if (format[i] == '%')
 			{
-				value = f(arguments);
-				count = count + value;
-				i = i + 2;
-				continue;
+				if (format[i + 1] == '\0')
+				{
+					count += _putchar(format[i]);
+					i++;
+				}
+				else if (format[i + 1] != '\0')
+				{
+					f = check_specifier(format[i + 1]);
+					if (f != NULL)
+					{
+						count += f(arguments);
+					}	
+					else
+					{
+						count += _putchar(format[i]) + _putchar(format[i + 1]);
+					}
+					i++;
+				}
 			}
-			if (format[i + 1] == '\0')
-				break;
-			if (format[i + 1] != '\0')
-			{
-				value = write(1, &format[i + 1], 1);
-				count = count + value;
-				i = i + 2;
-				continue;
-			}
+			else
+				{
+					count += _putchar(format[i]);
+				}
 		}
+		
 	}
+	va_end(arguments);
 	return (count);
 }
-

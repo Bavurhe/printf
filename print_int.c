@@ -1,44 +1,40 @@
 #include "main.h"
+
 /**
- * print_int - prints a given integer from a variadic paramter to base 10
- * @arguments: variadic paramter
- * Return: number of character printed on success
-*/
+ * print_int - prints decimal numbers in printf
+ * @d: decimal integers
+ * Return: number of intergers printed
+ */
 
 int print_int(va_list arguments)
 {
-int i = 0;
-int count = 0;
-int numb;
-int my_arr[10];
-char x[1];
+	unsigned int absolutenum, count, auxnumber, zerocount;
+	int numbers;
 
-/*Fetch integer from variadic paramters*/
-numb = va_arg(arguments, int);
+	count = 0;
 
-/*Break the anumber apart and assign them to array*/
-while (numb != 0)
-{
-my_arr[i] = (numb % 10);
-numb = numb / 10;
-if (numb == 0)
-{
-break;
-}
-else
-{
-i++;
-}
-}
+	numbers = va_arg(arguments, int);
 
-/*Write the content of the array to stdout*/
-for (i = 0; i >= 0; i--)
-{
-/*Convert int to char*/
-x[0] = ('0' + my_arr[i]);
-count += write(1, x, 1);
-}
-
-return (count);
-
+	if (numbers < 0)
+	{
+		absolutenum = (numbers * -1);
+		count += _putchar(45);
+	}
+	else
+	{
+		absolutenum = numbers;
+	}
+	auxnumber = absolutenum;
+	zerocount = 1;
+	while (auxnumber > 9)
+	{
+		auxnumber /= 10;
+		zerocount *= 10;
+	}
+	while (zerocount >= 1)
+	{
+		count += _putchar(((absolutenum / zerocount) % 10) + '0');
+		zerocount /= 10;
+	}
+	return (count);
 }

@@ -14,7 +14,8 @@ int print_char(va_list arguments)
 
 	if (c)
 	{
-		count = write(1, &c, 1);
+		
+		count = _putchar(c);
 		return (count);
 	}
 

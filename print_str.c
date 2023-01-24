@@ -7,20 +7,13 @@
 
 int print_str(va_list arguments)
 {
-int i;
-int count = 0;
-char *str;
-
-str = va_arg(arguments, char *);
-if (str == NULL)
-{
-return (-1);
+int i = 0;
+char* str = va_arg(arguments, char*);
+while (*str != '\0') {
+_puts(str);
+i++;
+str++;
 }
-while (str[i])
-{
-count = write(1, &str[i], 1);
-i = i + 1;
+return (i);
 }
 
-return (count);
-}

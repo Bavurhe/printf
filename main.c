@@ -1,25 +1,31 @@
-#include <stdio.h>
 #include "main.h"
-#include <unistd.h>
-#include <stdarg.h>
-
 
 /**
- * - this is a test file for testing the custom printf function
+ * main - Entry point
+ *
+ * Return: Always 0
  */
-
 int main(void)
 {
-	int count_std = 0;
-	int count_custom = 0;
+    int len;
+    int len2;
+	int num1;
+	int num2;
 
-	write(1, "STANDARD PRINTF\n", 16);
-	count_std = printf("Tester\n");
-	printf("I printed %d characters\n", count_std);
-
-	write(1, "--------------------\n", 21);
-
-	write(1, "CUSTOM PRINTF\n", 14);
-	count_custom =  _printf2("Tester\n");
-	printf("I printed %d characters\n", count_custom);
+    len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+	printf("String:[%s]\n", "I am a string !");
+	_printf("String:[%s]\n", "I am a string !");
+	num1 = _printf("Percent:[%%]\n");
+    num2 = printf("Percent:[%%]\n");
+    _printf("Len:[%d]\n", num1);
+    printf("Len:[%d]\n", num2);
+	_printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+	_printf("Negative:[%d]\n", -762534);
+    printf("Negative:[%d]\n", -762534);
+    
+    return (0);
 }
