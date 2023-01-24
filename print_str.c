@@ -1,14 +1,13 @@
 #include "main.h"
-
 /**
  * print_str - print a variadic string each character per time to stdout
- * @arguments: variadic parameter
+ * @s: variadic parameter
  * Return: number of character
 */
-int print_str(va_list arguments)
+int print_str(va_list s)
 {
 int count = 0;
-char *str = va_arg(arguments, char *);
+char *str = va_arg(s, char *);
 if (str == NULL)
 {
 	str = "(null)";

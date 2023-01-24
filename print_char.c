@@ -1,9 +1,7 @@
 #include "main.h"
-
 /**
  * print_char - print a character to stdout
  * @c: variadic parameter
- *
  * Return: number of characters printed
  */
 int print_char(va_list c)

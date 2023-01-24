@@ -1,9 +1,7 @@
 #include "main.h"
-
 /**
  * _printf - prints formatted strings
  * @format: a string containing formats
- *
  * Return: int (the total number of charachters printed)
  */
 int _printf(const char *format, ...)
