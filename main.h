@@ -30,6 +30,7 @@ int print_str(va_list s);
 int print_cent(va_list p);
 int print_dec(va_list d);
 int print_int(va_list i);
+int print_bin(va_list b);
 
 
 #endif

@@ -9,7 +9,7 @@
 int (*check_specifier(char format))(va_list)
 {
 
-int i = 0;
+unsigned int i = 0;
 
 pH my_array[] = {
 {"c", print_char},
@@ -18,6 +18,7 @@ pH my_array[] = {
 {"d", print_dec},
 {"i", print_int},
 {"d", print_dec},
+{"b", print_bin},
 {NULL, NULL}
 };
 
