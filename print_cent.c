@@ -7,7 +7,7 @@
  * Return: number of characters printed
  */
 int print_cent(va_list p)
-{	
+{
 	(void) p;
 	_putchar('%');
 	return (1);
