@@ -1,36 +1,39 @@
 #include "main.h"
 /**
- * base_convertor - converts a number to any base and prints them
- * @n: the number
- * @base: the base to convert to
- * @numbers: the number set to use for conversion
- * 
- * Return: number of characters printed to the screen
- */
-int base_convertor(unsigned long int n, unsigned int base, char numbers[])
-{
-    int counter = 0;
-
-    if (n < base)
-    {
-        _putchar(numbers[n]);
-    }
-    else
-    {
-        counter += base_convertor(n / base, base, number);
-        _putchar(numbers[n % base]);
-    }
-    counter += 1;
-    return (counter);
-}
-
-/**
- * _print_bin - handles the 'b' specifier
- * @b: va_list to get the next item from
- * 
- * Return: returnes the number of characters printed to the screen
+ * print_bin - prints binary in printf function
+ * @b: binary passed in function
+ * Return: count of what is printed
  */
 int print_bin(va_list b)
 {
-    return (base_convertor(va_arg(b, unsigned int), 2, "01"));
+	unsigned int i, count, num, binary, arr[32];
+
+	i = 0;
+	count = 0;
+	num = va_arg(b, int);
+
+	if (num < 1)
+	{
+		_putchar(48);
+		count++;
+		return (count);
+	}
+	else
+	{
+		while (num > 0)
+		{
+			binary = num % 2;
+			num /= 2;
+			arr[count] = binary;
+			count++;
+		}
+		i = count - 1;
+		while (i > 0)
+		{
+			_putchar(arr[i] + '0');
+			i--;
+		}
+		_putchar('0' + arr[i]);
+	}
+	return (count);
 }
