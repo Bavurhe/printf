@@ -1,8 +1,7 @@
 #include "main.h"
-
 /**
  * print_int - prints decimal numbers in printf
- * @d: decimal integers
+ * @arguments: decimal integers
  * Return: number of intergers printed
  */
 

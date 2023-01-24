@@ -12,6 +12,7 @@ int _printf(const char *format, ...);
 int _puts(char *s);
 int (*check_specifier(char format))(va_list argumets);
 
+
 /**
  * struct printHandler - struct to choose the right function depending
  * on the format specifier passed to _printf()
@@ -29,4 +30,6 @@ int print_str(va_list);
 int print_cent(va_list);
 int print_dec(va_list);
 int print_int(va_list);
+int print_percent(va_list);
+
 #endif

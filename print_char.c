@@ -8,16 +8,15 @@
  */
 int print_char(va_list arguments)
 {
-	char c = (char)va_arg(arguments, int);
+char c = (char)va_arg(arguments, int);
 
-	int count = 0;
+int count = 0;
 
-	if (c)
-	{
-		
-		count = _putchar(c);
-		return (count);
-	}
+if (c)
+{
+	count = _putchar(c);
+	return (count);
+}
 
-	return (0);
+return (0);
 }
