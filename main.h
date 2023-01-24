@@ -25,11 +25,11 @@ typedef struct printHandler
 	int (*f)(va_list);
 } pH;
 
-int print_char(va_list);
-int print_str(va_list);
-int print_cent(va_list);
-int print_dec(va_list);
-int print_int(va_list);
-int print_percent(va_list);
+int print_char(va_list c);
+int print_str(va_list s);
+int print_cent(va_list p);
+int print_dec(va_list d);
+int print_int(va_list i);
+
 
 #endif

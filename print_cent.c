@@ -2,13 +2,13 @@
 
 /**
  * print_cent - print a character % to stdout
- * @arguments: variadic parameter
+ * @p: variadic parameter
  *
  * Return: number of characters printed
  */
-int print_cent(va_list arguments)
-{
-	(void) arguments;
+int print_cent(va_list p)
+{	
+	(void) p;
 	_putchar('%');
 	return (1);
 }
