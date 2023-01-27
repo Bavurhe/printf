@@ -23,6 +23,8 @@ pH my_array[] = {
 {"o", print_octal},
 {"x", print_x},
 {"X", print_X},
+{"r", print_r},
+{"R", print_rot13},
 {NULL, NULL}
 };
 
