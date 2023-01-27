@@ -35,10 +35,14 @@ int print_unsig(va_list u);
 int print_octal(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
+int print_upper_string(va_list S);
 int print_r(va_list r);
 int print_rot13(va_list R);
 
 int print_unsignedIntToHex(unsigned int num, char _case);
 int print_hex_base(va_list arg, char _case);
+int _strlen(char *str);
+char *_strcpy(char *dest, char *src);
+void _string_upper(char *str);
 
 #endif
