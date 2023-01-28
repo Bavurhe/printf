@@ -15,7 +15,7 @@ int print_rot13(va_list R)
 	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	str = va_arg(R, char *);
-	if (!str)
+	if (str == NULL)
 		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
@@ -31,6 +31,7 @@ int print_rot13(va_list R)
 		if (!input[j])
 		{
 			count += _putchar(str[i]);
+			count++;
 		}
 	}
 	return (count);

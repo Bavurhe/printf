@@ -24,7 +24,7 @@ pH my_array[] = {
 {"x", print_x},
 {"X", print_X},
 {"S", print_upper_string},
-{"r", print_r},
+{"r", print_rev},
 {"R", print_rot13},
 {NULL, NULL}
 };
